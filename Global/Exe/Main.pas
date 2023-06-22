@@ -185,7 +185,7 @@ begin
     if not Assigned(HookOn) or not Assigned(HookOff) then
       raise Exception.Create('Can''t find the required DLL functions');
 
-    MyHandle := CreateFileMapping( $FFFFFFFF, nil, PAGE_READWRITE, 0, SizeOf(Integer), 'ElReceptor');
+    MyHandle := CreateFileMapping( $FFFFFFFF, nil, PAGE_READWRITE, 0, SizeOf(Int64), 'ElReceptor');
 
     if MyHandle = 0 then
       raise Exception.Create('Error while creating file');

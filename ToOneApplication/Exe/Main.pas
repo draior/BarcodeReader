@@ -25,8 +25,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, uTLBProcs,
-  StdCtrls, ComCtrls, Menus, StBase, StShBase, StTrIcon ,Registry ,CommonUtilities,
-  XPMenu;
+  StdCtrls, ComCtrls, Menus, StBase, Registry ,CommonUtilities,
+  XPMenu, Vcl.ImgList, Vcl.ExtCtrls;
 
 
 const
@@ -43,13 +43,15 @@ type
     eBarCodeStr: TEdit;
     Label1: TLabel;
     btnEnter: TButton;
-    StTrayIcon: TStTrayIcon;
     PopupMenu: TPopupMenu;
     miOptions: TMenuItem;
     miShow: TMenuItem;
     btnOptions: TButton;
     miExit: TMenuItem;
     XPMenu: TXPMenu;
+    TrayIcon: TTrayIcon;
+    ImageList: TImageList;
+    tStart: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnOptionsClick(Sender: TObject);
@@ -63,6 +65,8 @@ type
     procedure FormPaint(Sender: TObject);
     procedure StTrayIconDblClick(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; var RestoreApp: Boolean);
+    procedure tStartTimer(Sender: TObject);
+    procedure TrayIconDblClick(Sender: TObject);
   private
     { Private declarations }
      MyHandle: THandle;
@@ -78,6 +82,7 @@ type
      {$ENDIF}
      
      procedure LlegaDelHook(var message: TMessage); message  CM_MANDA_TECLA;
+     procedure OnMinimize(Sender: TObject);
   public
     { Public declarations }
     function SetHookOn(ThrdID: THandle): HHook;
@@ -212,7 +217,7 @@ begin
   if not Assigned(HookOn) or not Assigned(HookOff) or not Assigned(SetHook) then
     raise Exception.Create('Can''t find the required DLL functions');
 
-  MyHandle := CreateFileMapping( $FFFFFFFF, nil, PAGE_READWRITE, 0, SizeOf(Integer), 'ElReceptor');
+  MyHandle := CreateFileMapping(THandle($FFFFFFFF), nil, PAGE_READWRITE, 0, SizeOf(Int64), 'ElReceptor');
 
   if MyHandle = 0 then
     raise Exception.Create( 'Error while creating file');
@@ -225,7 +230,10 @@ begin
   L := TStringList.Create;
   L.Text := '> ';
   {$ENDIF}
-  //HookOn(ThreadID);
+
+  Application.OnMinimize := OnMinimize;
+
+  tStart.Enabled := True;
 end;
 
 procedure TfMain.FormDestroy(Sender: TObject);
@@ -278,6 +286,12 @@ begin
   fMain.Show;
 end;
 
+procedure TfMain.OnMinimize(Sender: TObject);
+begin
+  Hide; // This is to hide it from taskbar
+  TrayIcon.Visible := True;
+end;
+
 procedure TfMain.miOptionsClick(Sender: TObject);
 begin
   fOptions.Show;
@@ -316,6 +330,24 @@ procedure TfMain.StTrayIconDblClick(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; var RestoreApp: Boolean);
 begin
   Show_Flag := True;
+end;
+
+procedure TfMain.TrayIconDblClick(Sender: TObject);
+begin
+  TrayIcon.Visible := Visible;
+  if Visible then  // Application is visible, so minimize it to TrayIcon
+    Application.Minimize // This is to minimize the whole application
+  else begin // Application is not visible, so show it
+    Show; // This is to show it from taskbar
+    Application.Restore; // This is to restore the whole application
+    Application.BringToFront;
+  end;
+end;
+
+procedure TfMain.tStartTimer(Sender: TObject);
+begin
+  tStart.Enabled := False;
+  OnMinimize(Sender);
 end;
 
 function TfMain.SetHookOn(ThrdID: THandle): HHook;

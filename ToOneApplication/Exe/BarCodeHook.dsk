@@ -1,15 +1,47 @@
-﻿[Modules]
-Module0=default.htm
-Count=1
+﻿[Closed Files]
+File_0=TSourceModule,'C:\_Repository\ReportServer\TestServer\UMain.pas',0,1,68,1,78,0,0,,
+File_1=TSourceModule,'C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.dfm',0,1,1,1,1,0,0,,
+
+[Modules]
+Module0=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\data\vclctrls\Vcl.DBCtrls.pas
+Module1=C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.pas
+Module2=default.htm
+Module3=C:\_Repository\BarcodeReader\ToOneApplication\Exe\CommonUtilities.pas
+Module4=c:\program files (x86)\embarcadero\studio\14.0\source\rtl\win\Winapi.Windows.pas
+Count=5
 EditWindowCount=1
+
+[C:\Program Files (x86)\Embarcadero\Studio\14.0\source\data\vclctrls\Vcl.DBCtrls.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=0
 
 [default.htm]
 ModuleType=TURLModule
 
+[C:\_Repository\BarcodeReader\ToOneApplication\Exe\CommonUtilities.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files (x86)\embarcadero\studio\14.0\source\rtl\win\Winapi.Windows.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
 [EditWindow0]
-ViewCount=1
-CurrentView=0
+ViewCount=5
+CurrentEditView=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\data\vclctrls\Vcl.DBCtrls.pas
 View0=0
+View1=1
+View2=2
+View3=3
+View4=4
 PercentageSizes=1
 Create=1
 Visible=1
@@ -39,6 +71,50 @@ BottomMiddelPanelData=0000080001020200000009000000446F636B5369746530100000004772
 CustomEditViewType=TWelcomePageView
 WelcomePageURL=bds:/default.htm
 
+[View1]
+CustomEditViewType=TEditView
+Module=C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.pas
+CursorX=83
+CursorY=220
+TopLine=203
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.pas
+
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\data\vclctrls\Vcl.DBCtrls.pas
+CursorX=80
+CursorY=6530
+TopLine=6516
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\data\vclctrls\Vcl.DBCtrls.pas
+
+[View3]
+CustomEditViewType=TEditView
+Module=c:\program files (x86)\embarcadero\studio\14.0\source\rtl\win\Winapi.Windows.pas
+CursorX=48
+CursorY=7263
+TopLine=7240
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=c:\program files (x86)\embarcadero\studio\14.0\source\rtl\win\Winapi.Windows.pas
+
+[View4]
+CustomEditViewType=TEditView
+Module=C:\_Repository\BarcodeReader\ToOneApplication\Exe\CommonUtilities.pas
+CursorX=15
+CursorY=7
+TopLine=43
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\_Repository\BarcodeReader\ToOneApplication\Exe\CommonUtilities.pas
+
 [Watches]
 Count=0
 
@@ -64,7 +140,9 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=0
+Count=2
+Breakpoint0='C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.pas',178,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint1='C:\_Repository\BarcodeReader\ToOneApplication\Exe\Main.pas',222,'',0,1,'',1,0,0,'',1,'','','',0,''
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -109,12 +187,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=3170
-Height=4657
+Width=1940
+Height=7459
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=3170
-ClientHeight=4657
+ClientWidth=1940
+ClientHeight=7459
 TBDockHeight=5893
 LRDockWidth=2350
 Dockable=1
@@ -253,6 +331,11 @@ LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=70
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,
+ExpandedItems=
 
 [TFileExplorerForm]
 PercentageSizes=1
@@ -613,6 +696,6 @@ LRDockWidth=1999
 Dockable=1
 StayOnTop=0
 TabPosition=1
-ActiveTabID=PropertyInspector
+ActiveTabID=ProjectManager
 TabDockClients=ProjectManager,StructureView,ToolForm,ModelViewTool,DataExplorerContainer,PropertyInspector,TemplateView,TFileExplorerForm,ClassBrowserTool
 

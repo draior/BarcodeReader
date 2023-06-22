@@ -1,7 +1,7 @@
 library DLL_BarCode;
 
 uses
-  ShareMem, Windows, Messages, Sysutils, Registry, Classes, Dialogs;
+  ShareMem, Windows, Messages, Sysutils, Registry, Classes;
 
 const
   CM_MANDA_TECLA = WM_USER + $1000;
