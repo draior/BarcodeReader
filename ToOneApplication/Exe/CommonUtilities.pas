@@ -2,7 +2,9 @@ unit CommonUtilities;
 
 interface
 
-uses Windows, SysUtils, Registry, Classes, db, Dialogs, ComObj, Forms, Controls, Graphics;
+uses
+  Windows, SysUtils, Registry, Classes, db, Dialogs, ComObj, Forms, Controls,
+  Graphics, Variants;
 
 const
   xlWBATWorksheet       = -4167;
