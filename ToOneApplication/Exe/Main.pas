@@ -19,6 +19,7 @@
         PostMessage to the handles,are specified in the
         array in Unit2.
 }
+
 unit Main;
 
 interface
@@ -30,8 +31,8 @@ uses
 
 
 const
-  DLLName         = 'DLL_BarCode.dll';
-  CM_MANDA_TECLA  = WM_USER + $1000;
+  DLLName = 'DLL_BarCode.dll';
+  CM_MANDA_TECLA = WM_USER + $1000;
 
 type
   THookOnProc = function(ThrdID: THandle): HHook; stdcall;  //HookOn
@@ -203,21 +204,21 @@ begin
   InitialionReg;
 
   Self.Top := Screen.Height - Self.Height - 30;
-  Self.Left:= Screen.Width  - Self.Width;
+  Self.Left := Screen.Width - Self.Width;
 
   timMsec := GetTickCount;
   HandleDLL := LoadLibrary(PChar(ExtractFilePath(Application.Exename) + DLLName));
   if HandleDLL = 0 then
     raise Exception.Create('DLL not found');
 
-  HookOn  := GetProcAddress(HandleDLL, 'HookOn');
+  HookOn := GetProcAddress(HandleDLL, 'HookOn');
   HookOff := GetProcAddress(HandleDLL, 'HookOff');
   SetHook := GetProcAddress(HandleDLL, 'SetActiveHook');
 
   if not Assigned(HookOn) or not Assigned(HookOff) or not Assigned(SetHook) then
     raise Exception.Create('Can''t find the required DLL functions');
 
-  MyHandle := CreateFileMapping(THandle($FFFFFFFF), nil, PAGE_READWRITE, 0, SizeOf(Int64), 'ElReceptor');
+  MyHandle := CreateFileMapping(0, nil, PAGE_READWRITE, 0, 256, 'ElReceptor');
 
   if MyHandle = 0 then
     raise Exception.Create( 'Error while creating file');
