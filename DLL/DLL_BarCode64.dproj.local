@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.151,C:\_Repository\BCR\DLL\DLL_BarCode64.dproj=C:\_Repository\BCR\DLL\DLL_BarAode64.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.893,C:\_Repository\BCR\DLL\DLL_BarAode64.dproj=C:\_Repository\BCR\DLL\DLL_Barcode64.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.459,C:\_Repository\Export-dll\ExportDll.dproj=C:\_Repository\Export-dll\ExportX64Dll.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.425,C:\_Repository\BCR\DLL\ExportX64Dll.dproj=C:\_Repository\BCR\DLL\DLL_Barcode64.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
