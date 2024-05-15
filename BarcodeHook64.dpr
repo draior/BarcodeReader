@@ -14,7 +14,7 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TfMain, fMain);
-  Application.ShowMainForm := False;
+  //Application.ShowMainForm := False;
   Application.CreateForm(TfOptions, fOptions);
   Application.Run;
 end.
