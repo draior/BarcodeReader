@@ -25,8 +25,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, uTLBProcs,
-  StdCtrls, ComCtrls, Menus, StBase, Registry, Vcl.ExtCtrls, Vcl.ImgList,
-  ULogUtils;
+  StdCtrls, ComCtrls, Menus, StBase, Registry, Vcl.ExtCtrls, Vcl.ImgList;
 
 const
   DLLName = 'DLL_BarCode64.dll';
@@ -156,7 +155,6 @@ begin
 
     PostMessage(CurrentActiveHandle, CM_MANDA_TECLA, lcAtom, 0);
 
-    WriteToLog(AbarCodeStr, 'barCodeStr');
     FreeMem(barcode);
 
     BarCodeStr := '';
@@ -232,7 +230,7 @@ begin
     raise Exception.Create('Can''t find the required DLL functions');
 
   //org CreateFileMapping($FFFFFFFF, nil, PAGE_READWRITE, 0, SizeOf(Integer), 'ElReceptor');
-  MyHandle := CreateFileMapping(0, nil, PAGE_READWRITE, 0, SizeOf(Int64), 'ElReceptor');
+  MyHandle := CreateFileMapping(THandle(-1), nil, PAGE_READWRITE, 0, SizeOf(Integer), 'ElReceptor');
 
   if MyHandle = 0 then
     raise Exception.Create( 'Error while creating file');
