@@ -1,0 +1,11 @@
+*.LOG
+*.ini
+*.dsk
+*.exe
+*.rsm
+*.local
+*.dproj.local
+*.dproj
+*.local
+*.local
+*.identcache
