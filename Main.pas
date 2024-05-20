@@ -97,7 +97,7 @@ uses Options;
 
 {$R *.DFM}
 
-function TranslateKeyToCharacter(VirtualKey: Byte; ShiftPressed: Boolean): Char;
+function TranslateKeyToCharacter(VirtualKey: Byte; ShiftPressed: Boolean; kbd: HKL): Char;
 var
   KeyboardState: TKeyboardState;
   UnicodeBuffer: array[0..1] of WideChar;
@@ -110,7 +110,7 @@ begin
 
   // Translate the virtual key to Unicode characters
   len := ToUnicodeEx(virtualKey, MapVirtualKey(virtualKey, 0), @keyboardState,
-    unicodeBuffer, Length(unicodeBuffer), 0, GetKeyboardLayout(0));
+    unicodeBuffer, Length(unicodeBuffer), 0, kbd);
 
   // Check if translation was successful and return the resulting character
   if len > 0 then
@@ -118,6 +118,9 @@ begin
   else
     Result := #0; // No valid character produced
 end;
+
+const
+  US_LAYOUT = '00000409'; // Locale identifier for the US keyboard layout
 
 var
   prevIsShift: boolean = false;
@@ -133,7 +136,7 @@ begin
   readCh := Message.WParam;
 
   if (prevIsShift) then
-    readCh := Ord(TranslateKeyToCharacter(readCh, true));
+    readCh := Ord(TranslateKeyToCharacter(readCh, true, LoadKeyboardLayout(US_LAYOUT, KLF_NOTELLSHELL)));
 
   prevIsShift := readCh = VK_SHIFT;
 
