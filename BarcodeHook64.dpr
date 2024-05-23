@@ -5,7 +5,8 @@ uses
   Main in 'Main.pas' {Form1},
   Options in 'Options.pas' {fOptions},
   uTLBProcs in 'uTLBProcs.pas',
-  BarCodeHook64_TLB in 'BarCodeHook64_TLB.pas';
+  BarCodeHook64_TLB in 'BarCodeHook64_TLB.pas',
+  DebugLog in '..\Lib-XE2\JD\DebugLog.pas';
 
 {$R *.TLB}
 

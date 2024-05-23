@@ -2,6 +2,7 @@
 *.ini
 *.dsk
 *.exe
+*.dll
 *.rsm
 *.local
 *.dproj.local

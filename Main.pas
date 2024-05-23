@@ -24,12 +24,13 @@ unit Main;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, uTLBProcs,
-  StdCtrls, ComCtrls, Menus, StBase, Registry, Vcl.ExtCtrls, Vcl.ImgList;
+  Windows, Messages, Forms, System.ImageList, Vcl.ImgList, Vcl.Controls, Vcl.ExtCtrls, Vcl.Menus,
+  Vcl.StdCtrls, System.Classes, SysUtils;
 
 const
   DLLName = 'DLL_BarCode64.dll';
   CM_MANDA_TECLA = WM_USER + $1000;
+  DebugLogFile: String = 'Debug.LOG';
 
 type
   THookOnProc = function(ThrdID: THandle): HHook; stdcall;  //HookOn
@@ -47,7 +48,6 @@ type
     miExit: TMenuItem;
     TrayIcon: TTrayIcon;
     ImageList: TImageList;
-    tStart: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnOptionsClick(Sender: TObject);
@@ -60,20 +60,21 @@ type
     procedure miExitClick(Sender: TObject);
     procedure FormPaint(Sender: TObject);
     procedure TrayIconDblClick(Sender: TObject);
-    procedure tStartTimer(Sender: TObject);
   private
     { Private declarations }
      MyHandle: THandle;
      PReceptor: ^Integer;
      HandleDLL: THandle;
      timMsec: Double;
-     barCodeStr: String;
+     barCodeStr: AnsiString;
      HookOn: THookOnProc;
      HookOff: THookOffProc;
      SetHook: TSetActiveHookProc;
+     DebugLog: TStringList;
      
      procedure LlegaDelHook(var message: TMessage); message CM_MANDA_TECLA;
      procedure OnMinimize(Sender: TObject);
+     procedure DebugLogSave;
   public
     { Public declarations }
     function SetHookOn(ThrdID: THandle): HHook;
@@ -120,7 +121,8 @@ begin
 end;
 
 const
-  US_LAYOUT = '00000409'; // Locale identifier for the US keyboard layout
+  US_STD_LAYOUT = '00000409'; // Locale identifier for the US keyboard layout
+  US_INTERN_LAYOUT = '00020409'; //International US keyboard
 
 var
   prevIsShift: boolean = false;
@@ -130,44 +132,50 @@ var
   lcAtom: LongWord;
   barcode: PChar;
   readCh: Integer;
-  AbarCodeStr: String;
+  AbarCodeStr: AnsiString;
 begin
   {Reads The Pressed Key}
   readCh := Message.WParam;
 
-  if (prevIsShift) then
-    readCh := Ord(TranslateKeyToCharacter(readCh, true, LoadKeyboardLayout(US_LAYOUT, KLF_NOTELLSHELL)));
+  //FormatDebugLine('::', Chr(readCh), DebugLog);
+  if prevIsShift then begin
+    readCh := Ord(TranslateKeyToCharacter(readCh, true, LoadKeyboardLayout(US_INTERN_LAYOUT, KLF_NOTELLSHELL)));
+    //FormatDebugLine('!!', Chr(readCh) + ' read | start symbols ' + Chr(smbStartSymbol), DebugLog);
+  end;
 
   prevIsShift := readCh = VK_SHIFT;
 
-  if readCh = smbStartSymbol then
+  if readCh = smbStartSymbol then begin
+    //FormatDebugLine('!!', 'Start symbol read. Clear barcode: ' + barCodeStr, DebugLog);
     barCodeStr := '';       { Clear the BarCode String; }
+  end;
 
   {If the End Of BarCode Arrived}
   if (readCh = smbStopSymbol) and ((GetTickCount - timMsec) < smbDelay) then begin
     {Convert To PChar To Use ATOMs}
 
     eBarCodeStr.Text := barCodeStr;
+    //FormatDebugLine('!!', 'Barcode: ' + barCodeStr, DebugLog);
     GetMem(barcode, (Length(barCodeStr) + 1));
+    try
+      StrPCopy(barcode, barCodeStr);
+      barCodeStr := '';
+      lcAtom := GlobalAddAtom(barcode);
 
-    StrPCopy(barcode, barCodeStr);
-
-    AbarCodeStr := barCodeStr;
+      PostMessage(CurrentActiveHandle, CM_MANDA_TECLA, lcAtom, 0);
+      //GlobalDeleteAtom(lcAtom);
+    finally
+      FreeMem(barcode);
+    end;
+    //DebugLogSave;
     barCodeStr := '';
-    lcAtom := GlobalAddAtom(barcode);
-
-    PostMessage(CurrentActiveHandle, CM_MANDA_TECLA, lcAtom, 0);
-
-    FreeMem(barcode);
-
-    BarCodeStr := '';
   end;
 
   { If the Incomming String is a Barcode ?
     The Barcode symbols come between 5 and 15 ms each }
   if ((GetTickCount - timMsec) < smbDelay) then begin
     if (readCh <> smbStopSymbol) and (readCh <> smbStartSymbol) then
-      barCodeStr := barCodeStr + chr(readCh);
+      barCodeStr := barCodeStr + Chr(readCh);
   end;
 
   timMsec := GetTickCount;
@@ -244,7 +252,10 @@ begin
 
   Application.OnMinimize := OnMinimize;
 
-  tStart.Enabled := True;
+  //if FileExists(ExtractFileDir(Application.ExeName) + '\' + DebugLogFile) then
+    //DebugLog := TStringList.Create;
+
+  //tStart.Enabled := True;
 end;
 
 procedure TfMain.FormDestroy(Sender: TObject);
@@ -260,11 +271,28 @@ begin
     UnmapViewOfFile(PReceptor);
     CloseHandle(MyHandle);
   end;
+
+  //DebugLogSave;
+  //FreeAndNil(DebugLog);
 end;
 
 procedure TfMain.btnOptionsClick(Sender: TObject);
 begin
   fOptions.Visible := True;
+end;
+
+procedure TfMain.DebugLogSave;
+var
+  S: String;
+begin
+  if (DebugLog = nil) or (DebugLog.Count = 0) then
+    Exit;
+
+  S := DebugLog.Text;
+
+  //if S <> '' then
+    //FileAppendStr(ExtractFileDir(Application.ExeName) + '\' + DebugLogFile, S, False);
+  DebugLog.Clear;
 end;
 
 procedure TfMain.btnEnterClick(Sender: TObject);
@@ -340,12 +368,6 @@ begin
     Application.Restore; // This is to restore the whole application
     Application.BringToFront;
   end;
-end;
-
-procedure TfMain.tStartTimer(Sender: TObject);
-begin
-  tStart.Enabled := False;
-  OnMinimize(Sender);
 end;
 
 function TfMain.SetHookOn(ThrdID: THandle): HHook;

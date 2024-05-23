@@ -1,29 +1,27 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\GETMEM.INC',0,1,2349,75,2367,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\VCL\Vcl.Forms.pas',0,1,2172,1,2181,0,0,{{1717,4}
-File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,5713,1,5722,0,0,,
-File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\System.pas',0,1,15648,16,15653,0,0,,
-File_4=TSourceModule,'C:\_Repository\BCR\Options.pas',0,1,1,58,13,0,0,,
-File_5=TSourceModule,'C:\_Repository\BCR\BarCodeHook64_TLB.pas',0,1,72,27,81,0,0,,
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\SysInit.pas',0,1,1172,1,1200,0,0,,
-File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Win.ComObj.pas',0,1,1450,68,1463,0,0,,
-File_8=TSourceModule,'C:\_Repository\BCR\BarCodeHook_TLB.pas',0,1,1,1,1,0,0,,
-File_9=TSourceModule,'C:\_Repository\Lib-XE2\jvcl\source\JvHidControllerClass.pas',0,1,528,95,546,0,0,,
-File_10=TSourceModule,'C:\_Repository\Lib-XE2\jvcl\common\ModuleLoader.pas',0,1,26,1,42,0,0,,
-File_11=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\source\rtl\win\Winapi.Messages.pas',0,1,220,10,233,0,0,,
-File_12=TSourceModule,'C:\_Repository\Lib-XE2\jvcl\common\jvcl.inc',0,1,14,18,26,0,0,,
-File_13=TSourceModule,'C:\_Repository\BarcodeReader\DLL\DLL_BarCode.dll',0,1,1,1,1,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\GETMEM.INC',0,1,2358,66,2371,0,0,,
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\System.pas',0,1,1,1,11,0,0,,
+File_2=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\14.0\source\vcl\Vcl.Controls.pas',0,1,6110,1,6121,0,0,,
+File_3=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\14.0\source\vcl\Vcl.StdCtrls.pas',0,1,2449,15,2466,0,0,{{1650,4}
+File_4=TSourceModule,'C:\_Repository\Lib-XE2\jd\ToolsUnit.pas',0,1,282,49,294,0,0,,
+File_5=TSourceModule,'C:\_Repository\BarcodeReader\BarCodeHook64_TLB.pas',0,1,89,3,105,0,0,,
+File_6=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\14.0\source\rtl\common\System.ZLib.pas',0,1,2647,61,2661,0,0,{{112,0}
+File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Classes.pas',0,1,15826,79,15842,0,0,,
+File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\VCL\Vcl.Forms.pas',0,1,2172,1,2181,0,0,{{1717,4}
+File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,5713,1,5722,0,0,,
+File_10=TSourceModule,'C:\_Repository\BCR\Options.pas',0,1,1,58,13,0,0,,
+File_11=TSourceModule,'C:\_Repository\BCR\BarCodeHook64_TLB.pas',0,1,72,27,81,0,0,,
+File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\SOURCE\RTL\SYS\SysInit.pas',0,1,1172,1,1200,0,0,,
+File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Win.ComObj.pas',0,1,1450,68,1463,0,0,,
 
 [Modules]
 Module0=C:\_Repository\BarcodeReader\Main.pas
-Module1=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\rtl\common\System.ZLib.pas
-Module2=C:\_Repository\BarcodeReader\BarcodeHook64.dproj
-Module3=c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Classes.pas
+Module1=C:\_Repository\BarcodeReader\BarcodeHook64.dproj
+Module2=C:\_Repository\Lib-XE2\JD\DebugLog.pas
+Module3=C:\_Repository\BarcodeReader\uTLBProcs.pas
 Module4=C:\_Repository\Lib-XE2\JD\ULogUtils.pas
-Module5=C:\_Repository\BarcodeReader\uTLBProcs.pas
-Module6=C:\_Repository\BarcodeReader\BarCodeHook64_TLB.pas
-Module7=default.htm
-Count=8
+Module5=default.htm
+Count=6
 EditWindowCount=1
 
 [C:\_Repository\BarcodeReader\Main.pas]
@@ -31,20 +29,10 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[C:\Program Files (x86)\Embarcadero\Studio\14.0\source\rtl\common\System.ZLib.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
 [C:\_Repository\BarcodeReader\BarcodeHook64.dproj]
 ModuleType=TBaseProject
 
-[c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Classes.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[C:\_Repository\Lib-XE2\JD\ULogUtils.pas]
+[C:\_Repository\Lib-XE2\JD\DebugLog.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -54,7 +42,7 @@ ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
 
-[C:\_Repository\BarcodeReader\BarCodeHook64_TLB.pas]
+[C:\_Repository\Lib-XE2\JD\ULogUtils.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -63,7 +51,7 @@ FormOnTop=0
 ModuleType=TURLModule
 
 [EditWindow0]
-ViewCount=8
+ViewCount=6
 CurrentEditView=C:\_Repository\BarcodeReader\Main.pas
 View0=0
 View1=1
@@ -71,8 +59,6 @@ View2=2
 View3=3
 View4=4
 View5=5
-View6=6
-View7=7
 PercentageSizes=1
 Create=1
 Visible=1
@@ -105,79 +91,57 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\_Repository\BarcodeReader\Main.pas
-CursorX=1
-CursorY=349
-TopLine=329
+CursorX=85
+CursorY=385
+TopLine=368
 LeftCol=1
 Elisions=
-Bookmarks=
+Bookmarks={1,146,99}
 EditViewName=C:\_Repository\BarcodeReader\Main.pas
 
 [View2]
 CustomEditViewType=TEditView
-Module=c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Classes.pas
-CursorX=79
-CursorY=15842
-TopLine=15826
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=c:\program files (x86)\embarcadero\studio\14.0\source\rtl\common\System.Classes.pas
-
-[View3]
-CustomEditViewType=TEditView
-Module=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\rtl\common\System.ZLib.pas
-CursorX=61
-CursorY=2661
-TopLine=2647
-LeftCol=1
-Elisions={{112,0},{1714,32},{'zlib.h translation'}}
-Bookmarks=
-EditViewName=C:\Program Files (x86)\Embarcadero\Studio\14.0\source\rtl\common\System.ZLib.pas
-
-[View4]
-CustomEditViewType=TEditView
-Module=C:\_Repository\BarcodeReader\BarcodeHook64.dpr
-CursorX=46
-CursorY=8
-TopLine=10
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\_Repository\BarcodeReader\BarcodeHook64.dpr
-
-[View5]
-CustomEditViewType=TEditView
-Module=C:\_Repository\Lib-XE2\JD\ULogUtils.pas
-CursorX=29
-CursorY=197
-TopLine=193
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\_Repository\Lib-XE2\JD\ULogUtils.pas
-
-[View6]
-CustomEditViewType=TEditView
 Module=C:\_Repository\BarcodeReader\uTLBProcs.pas
-CursorX=65
-CursorY=25
-TopLine=4
+CursorX=78
+CursorY=12
+TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\_Repository\BarcodeReader\uTLBProcs.pas
 
-[View7]
+[View3]
 CustomEditViewType=TEditView
-Module=C:\_Repository\BarcodeReader\BarCodeHook64_TLB.pas
-CursorX=3
-CursorY=105
-TopLine=89
+Module=C:\_Repository\Lib-XE2\JD\DebugLog.pas
+CursorX=1
+CursorY=67
+TopLine=48
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\_Repository\BarcodeReader\BarCodeHook64_TLB.pas
+EditViewName=C:\_Repository\Lib-XE2\JD\DebugLog.pas
+
+[View4]
+CustomEditViewType=TEditView
+Module=C:\_Repository\Lib-XE2\JD\ULogUtils.pas
+CursorX=3
+CursorY=133
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\_Repository\Lib-XE2\JD\ULogUtils.pas
+
+[View5]
+CustomEditViewType=TEditView
+Module=C:\_Repository\BarcodeReader\BarcodeHook64.dpr
+CursorX=8
+CursorY=16
+TopLine=10
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\_Repository\BarcodeReader\BarcodeHook64.dpr
 
 [Watches]
 Count=0
@@ -204,12 +168,7 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=5
-Breakpoint0='C:\_Repository\Lib-XE2\jvcl\source\JvHidControllerClass.pas',545,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint1='C:\_Repository\Lib-XE2\jvcl\source\JvHidControllerClass.pas',577,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint2='C:\_Repository\Lib-XE2\jvcl\source\JvHidControllerClass.pas',573,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint3='C:\_Repository\BCR\Main.pas',406,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint4='C:\_Repository\BCR\Main.pas',346,'',0,1,'',1,0,0,'',1,'','','',0,''
+Count=0
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
