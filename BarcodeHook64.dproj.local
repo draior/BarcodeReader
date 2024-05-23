@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.398,=C:\_Repository\BCR\uTLBProcs.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.372,=C:\_Repository\BCR\Options.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.647,=C:\_Repository\BarcodeReader\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.579,C:\_Repository\BCR\BarCodeHook64.ridl=C:\_Repository\BCR\BarCodeHook.ridl</Transaction>
     <Transaction>1899.12.30 00:00:00.000.176,=C:\_Repository\BCR\BarCodeHook.ridl</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.844,C:\_Repository\BCR\BarcodeHook64.dproj=C:\_Repository\BCR\BarcodeHook.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.879,=C:\_Repository\BarcodeReader\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.372,=C:\_Repository\BCR\Options.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.418,=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.194,C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\_Repository\BCR\Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.194,C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\_Repository\BCR\Main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.398,=C:\_Repository\BCR\uTLBProcs.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.403,=C:\_Repository\BCR\BarCodeHook64_TLB.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.395,C:\Users\1\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\_Repository\BCR\BarcodeHook.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.501,=C:\_Repository\BCR\BarCodeHook_TLB.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.579,C:\_Repository\BCR\BarCodeHook64.ridl=C:\_Repository\BCR\BarCodeHook.ridl</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.194,C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\_Repository\BCR\Main.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.418,=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.194,C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\_Repository\BCR\Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.844,C:\_Repository\BCR\BarcodeHook64.dproj=C:\_Repository\BCR\BarcodeHook.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.920,C:\_Repository\Lib-XE2\JD\DebugLog.pas=C:\_Repository\BarcodeReader\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

@@ -1,11 +1,11 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{971DE3F5-5685-4F42-B6B4-AC867ECA3A14}</ProjectGuid>
-        <ProjectVersion>15.4</ProjectVersion>
+        <ProjectVersion>19.5</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <MainSource>BarcodeHook64.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -68,16 +68,20 @@
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <DCC_UsePackage>IndyIPClient;FireDACASADriver;DevExpressXE6;FireDACSqliteDriver;bindcompfmx;FireDACDSDriver;DBXSqliteDriver;vcldbx;FireDACPgDriver;FireDACODBCDriver;RESTBackendComponents;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;FireDACCommon;bindcomp;inetdb;tethering;inetdbbde;DBXInterBaseDriver;DataSnapClient;DataSnapServer;DataSnapCommon;DBXOdbcDriver;vclFireDAC;DataSnapProviderClient;xmlrtl;DataSnapNativeClient;DBXSybaseASEDriver;DbxCommonDriver;svnui;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;DatasnapConnectorsFreePascal;FireDACCommonDriver;MetropolisUILiveTile;bindcompdbx;bindengine;vclactnband;vcldb;soaprtl;vcldsnap;bindcompvcl;vclie;fmxFireDAC;FireDACADSDriver;DBXDb2Driver;vcltouch;DBXOracleDriver;CustomIPTransport;dclRBE1520;vclribbon;VclSmp;FireDACMSSQLDriver;FireDAC;dsnap;DBXInformixDriver;fmxase;vcl;IndyCore;IndyIPServer;DataSnapServerMidas;DBXMSSQLDriver;IndyIPCommon;VCLRESTComponents;dsnapcon;FireDACIBDriver;DBXFirebirdDriver;inet;CloudService;DataSnapFireDAC;fmxobj;DataSnapConnectors;FireDACDBXDriver;FireDACMySQLDriver;soapmidas;vclx;soapserver;inetdbxpress;svn;DBXSybaseASADriver;dsnapxml;FireDACOracleDriver;FireDACInfxDriver;FireDACDb2Driver;fmxdae;RESTComponents;bdertl;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;adortl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <DCC_UsePackage>IndyIPClient;FireDACASADriver;FireDACSqliteDriver;bindcompfmx;FireDACDSDriver;DBXSqliteDriver;FireDACPgDriver;FireDACODBCDriver;RESTBackendComponents;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;FireDACCommon;bindcomp;inetdb;tethering;DBXInterBaseDriver;DataSnapClient;DataSnapServer;DataSnapCommon;DBXOdbcDriver;vclFireDAC;DataSnapProviderClient;xmlrtl;DataSnapNativeClient;DBXSybaseASEDriver;DbxCommonDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;DatasnapConnectorsFreePascal;FireDACCommonDriver;MetropolisUILiveTile;bindcompdbx;bindengine;vclactnband;vcldb;soaprtl;vcldsnap;bindcompvcl;vclie;fmxFireDAC;FireDACADSDriver;DBXDb2Driver;vcltouch;DBXOracleDriver;CustomIPTransport;dclRBE1520;vclribbon;VclSmp;FireDACMSSQLDriver;FireDAC;dsnap;DBXInformixDriver;fmxase;vcl;IndyCore;IndyIPServer;DataSnapServerMidas;DBXMSSQLDriver;IndyIPCommon;VCLRESTComponents;dsnapcon;FireDACIBDriver;DBXFirebirdDriver;inet;CloudService;DataSnapFireDAC;fmxobj;DataSnapConnectors;FireDACDBXDriver;FireDACMySQLDriver;soapmidas;vclx;soapserver;inetdbxpress;DBXSybaseASADriver;dsnapxml;FireDACOracleDriver;FireDACInfxDriver;FireDACDb2Driver;fmxdae;RESTComponents;FireDACMSAccDriver;dbexpress;DataSnapIndy10ServerTransport;adortl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -88,18 +92,22 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_ExeOutput>C:\_Repository\BarcodeReader\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\_Units\</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_UnitSearchPath>C:\_Repository\Lib-XE2\jvcl\common;C:\_Repository\Lib-XE2\jvcl\source;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <DCC_UnitSearchPath>C:\Program Files (x86)\Embarcadero\Studio\14.0\source\rtl\common;C:\Program Files (x86)\Embarcadero\Studio\14.0\source\vcl;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <Icon_MainIcon>BarCodeHook_Icon.ico</Icon_MainIcon>
         <DCC_ExeOutput>C:\_Repository\BarcodeReader\</DCC_ExeOutput>
         <DCC_DcuOutput>C:\_Units\</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -120,7 +128,7 @@
         <Icon_MainIcon>BarCodeHook_Icon.ico</Icon_MainIcon>
         <VerInfo_Build>6</VerInfo_Build>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=5.0.2.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=5.0.2.6;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=5.0.2.6;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=5.0.2.6;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -136,16 +144,17 @@
         </DCCReference>
         <DCCReference Include="uTLBProcs.pas"/>
         <DCCReference Include="BarCodeHook64_TLB.pas"/>
+        <DCCReference Include="..\Lib-XE2\JD\DebugLog.pas"/>
         <RidlCompile Include="BarCodeHook64.ridl"/>
-        <BuildConfiguration Include="Release">
-            <Key>Cfg_2</Key>
-            <CfgParent>Base</CfgParent>
-        </BuildConfiguration>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
         </BuildConfiguration>
     </ItemGroup>
@@ -158,11 +167,11 @@
                     <Source Name="MainSource">BarcodeHook64.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment/>
+            <Deployment Version="4"/>
             <Platforms>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
@@ -175,4 +184,5 @@
     </ProjectExtensions>
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
 </Project>

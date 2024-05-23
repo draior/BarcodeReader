@@ -26,6 +26,7 @@ implementation
 function CallBackDelHook(Code: Integer; wParam: WPARAM; lParam: LPARAM): LRESULT;
 begin
   // Check if the code is less than 0, indicating a message sent to a hook procedure
+  if (Code = HC_ACTION) then begin
   if Code < 0 then
     Result := CallNextHookEx(HookDeTeclado, Code, wParam, lParam);
 
@@ -62,6 +63,7 @@ begin
   end;
 
   TimMsec := GetTickCount;
+  end;
 end;
 
 function HookOn(ThrdID: THandle): HHook;
